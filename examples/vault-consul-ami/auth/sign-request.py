@@ -22,10 +22,7 @@ import base64
 import sys
 
 def headers_to_go_style(headers):
-    retval = {}
-    for k, v in headers.iteritems():
-        retval[k] = [v]
-    return retval
+    return {k: [v] for k, v in headers.iteritems()}
 
 def generate_vault_request(awsIamServerId):
     session = botocore.session.get_session()
